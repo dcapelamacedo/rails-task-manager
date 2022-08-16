@@ -1,0 +1,16 @@
+<ul class="navbar list-unstyled">
+  <li><h1><%= @task.title  %></h1></li>
+  <li><%= link_to '✏️Edit the task', edit_path %></li>
+</ul>
+
+<h3><%= @task.details %></h3>
+<input type="checkbox" id="completed" name="completed">
+<label for="completed">This task is completed</label>
+<hr>
+<%= link_to "Delete",
+  destroy_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<hr>
+<%= link_to "← Back to list", tasks_path %>
